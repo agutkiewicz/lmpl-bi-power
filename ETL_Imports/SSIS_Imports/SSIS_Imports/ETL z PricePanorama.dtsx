@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="9/13/2019 3:05:54 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="ETL z PricePanorama"
   DTS:PackageType="5"
-  DTS:VersionBuild="129"
-  DTS:VersionGUID="{5E31F414-48E8-4CE8-B070-786099F9FE54}">
+  DTS:VersionBuild="130"
+  DTS:VersionGUID="{F6A5F448-5ACC-42BA-8D6B-5750031E326D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,7 +28,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADoai8VX7vOn7tPpR+n1t96AAAAAASAAACgAAAAEAAAAI/KZ6IZPrBbX3O6jbQxv/YwAAAAVK05wmWUPeRpAzhD1x3UuXOqIKq6gY/wlXhsBx9sfCw11xHUe5feGG6krKRWO+lkFAAAADyPJCTFz/0b0Ynr1ms6/ia7NoyG</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACesKxQa3n/s4XzirdqlGY6AAAAAASAAACgAAAAEAAAAMou1sG2k18PVEqr7HYWrKkwAAAAE2haLmNg89oTDkpCwyle9fM0HQXyplwE01uWWUAuUAB+qCmFnlOjT/bJNkwkvetoFAAAAPoSJnOjUBTZCs+TAkXOH0v4M0AZ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -51,7 +51,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAATuRviZrAkkdkMMxnzMl/EAAAAAASAAACgAAAAEAAAAK8+aGCK7HlKxcTZRbyFBUogAAAAJ9qKJx8+E8n22WiJvICBCtswvA94qD9q5XT7ktjsEAoUAAAAN7DyqM+BMNGOJtHUumPyXkpb4NU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADcYuNGQThvB/D37hwFBrcYAAAAAASAAACgAAAAEAAAAFWML0/IiE6zH5z1Kg+GLhAgAAAArvM/G0NCoS76kENkCwq5ovn77SToynWirrBtVyVj42IUAAAAOMvJnQm4EXVCSbLD2Jgp5UzgehQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -66,7 +66,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADLl8lZfq2C5O/1KIxayhUVAAAAAASAAACgAAAAEAAAAB7aQr/KEgaDQ+50WNqfxVUgAAAAPC3pFIUSktIBLoGprYjcHq4PZjUSKPpaapxK9YHW33AUAAAAfFy61ZVhxql43TALwuMlVY9m12A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAZ0dVHtooJ7RLgIgd+Tn0SAAAAAASAAACgAAAAEAAAAFU6jVwtl2CziBNi6fkCD8sgAAAA048MHyvbSVQ094RGco7gqhBl7T9Ku/gYJuU8S9q6Jd4UAAAAxOpnMDJeGD5ii7CbLPmC1h/l1Hs</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -81,7 +81,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAea84f1sCnt1ee5Z8oZd/VAAAAAASAAACgAAAAEAAAAMMssLrYLRVEpNKutdi5bTkgAAAApqtsb8kwmzjMtSNejz/lJ8MqCkiVh3kkRfh7Ibaj03IUAAAAXXF8KQ5jnaz0BbgwRN/DadsIyl0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABx97t7Nj7jXsdT2uLI4zBJAAAAAASAAACgAAAAEAAAABf//agNTUyaqxYpEsyn4IUgAAAAXiQJ2UCkdwGumYc3PTZW+Fv86vYkSbHe7cqvTfnpKeEUAAAASGhYtF5mBntvDSo8drJi6G8SDIk</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -96,7 +96,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABvGqLEU+WrWDCbADnQZChCAAAAAASAAACgAAAAEAAAANjwtLG8Pcuc0L6wQcLGe44gAAAAxKx7PzEJoSf4YwDNyv+dzlEftq5P0RnkLzTD5SLyN7EUAAAA8nKLRsgTvuyX1DI4gzDQCGdQduA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABdjiSzIvsqvveMy4AQS7E+AAAAAASAAACgAAAAEAAAABOa1QT0WQk3NVvMvP/zPbwgAAAAXgblMxnV/GbGkiTguhzObxhmwx78c3c5SFcGdJVWOecUAAAAUEr5mgoIMSq6S8FVgOsKR5/mXgk</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -158,7 +158,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DoW">
       <DTS:VariableValue
-        DTS:DataType="3">3</DTS:VariableValue>
+        DTS:DataType="3">4</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -452,7 +452,7 @@ where finished_sucessfully=true</property>
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -968,7 +968,7 @@ WHERE  "date"  &gt;= NOW() - INTERVAL '60 DAY'</property>
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1760,7 +1760,7 @@ WHERE  "change_date"  &gt;= NOW() - INTERVAL '60 DAY'</property>
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2385,7 +2385,7 @@ where day between '2019-08-01' AND '2019-09-01'</property>
                                       dataType="System.String"
                                       description="The SQL command to be executed."
                                       name="SqlCommand"
-                                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                                     <property
                                       dataType="System.Int32"
                                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2903,7 +2903,7 @@ WHERE 1=1
                                   dataType="System.String"
                                   description="The SQL command to be executed."
                                   name="SqlCommand"
-                                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                                 <property
                                   dataType="System.Int32"
                                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3298,7 +3298,7 @@ WHERE 1=1
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3640,7 +3640,7 @@ WHERE 1=1
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3782,7 +3782,7 @@ WHERE 1=1
                               description="The SQL command to be executed."
                               expressionType="Notify"
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [PRICING].[PRICESOURCE_HIST] SET [end_date] = ? WHERE [id] = ? AND [end_date] IS NULL</property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [PRICING].[PRICESOURCE_HIST] SET [end_date] = ? WHERE [id] = ? AND [end_date] IS NULL</property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3901,7 +3901,7 @@ WHERE 1=1
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.String"
                               description="The variable that contains the SQL command to be executed."
@@ -4033,7 +4033,7 @@ WHERE 1=1
                               dataType="System.String"
                               description="Specifies the SELECT statement used to create a schema rowset."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [id], [name], [shopid],[start_date],[end_date] FROM [PRICING].[PRICESOURCE_HIST]</property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [id], [name], [shopid],[start_date],[end_date] FROM [PRICING].[PRICESOURCE_HIST]</property>
                             <property
                               dataType="System.String"
                               description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -5072,7 +5072,7 @@ WHERE 1=1
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5676,7 +5676,7 @@ WHERE 1=1
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6080,7 +6080,7 @@ WHERE 1=1
                               description="The SQL command to be executed."
                               expressionType="Notify"
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [PRICING].[PRODUCT_HIST] SET [end_date] = ? WHERE [leroy_sku] = ? AND [productid] = ? AND [shopid] = ? AND [end_date] IS NULL</property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [PRICING].[PRODUCT_HIST] SET [end_date] = ? WHERE [leroy_sku] = ? AND [productid] = ? AND [shopid] = ? AND [end_date] IS NULL</property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6235,7 +6235,7 @@ WHERE 1=1
                               dataType="System.String"
                               description="The SQL command to be executed."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select [productid], [shopid], [shopname], [sku], [url], [name], [availability], [price], [old_price], [unit_price], [promo_code], [leroy_sku], [attr_product_manager], [attr_price_role], [attr_season_end], [attr_season_start], [attr_dzial], [attr_poddzial], [attr_typ], [attr_podtyp], [price_multiplier], [price_adjust], [is_exact_match], [last_scan] 
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select [productid], [shopid], [shopname], [sku], [url], [name], [availability], [price], [old_price], [unit_price], [promo_code], [leroy_sku], [attr_product_manager], [attr_price_role], [attr_season_end], [attr_season_start], [attr_dzial], [attr_poddzial], [attr_typ], [attr_podtyp], [price_multiplier], [price_adjust], [is_exact_match], [last_scan] 
 from [PRICING].[PRODUCT]
 where leroy_sku is not null</property>
                             <property
@@ -6825,7 +6825,7 @@ where leroy_sku is not null</property>
                               dataType="System.String"
                               description="Specifies the SELECT statement used to create a schema rowset."
                               name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [attr_dzial], [attr_poddzial], [attr_podtyp], [attr_price_role], [attr_product_manager], [attr_season_end], [attr_season_start], [attr_typ], [availability], [is_exact_match], [leroy_sku], [name], [old_price], [price], [price_adjust], [price_multiplier], [productid], [promo_code], [shopid], [shopname], [sku], [unit_price], [url],[start_date],[end_date] FROM [PRICING].[PRODUCT_HIST]</property>
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [attr_dzial], [attr_poddzial], [attr_podtyp], [attr_price_role], [attr_product_manager], [attr_season_end], [attr_season_start], [attr_typ], [availability], [is_exact_match], [leroy_sku], [name], [old_price], [price], [price_adjust], [price_multiplier], [productid], [promo_code], [shopid], [shopname], [sku], [unit_price], [url],[start_date],[end_date] FROM [PRICING].[PRODUCT_HIST]</property>
                             <property
                               dataType="System.String"
                               description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -8390,7 +8390,7 @@ where leroy_sku is not null</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\EST dest is_UPDATE"
           TopLeft="574.874993788079,5.5" />
         <NodeLayout
@@ -8457,19 +8457,19 @@ where leroy_sku is not null</property>
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="203,307"
-          Size="173,43"
+          Size="172.8,43.2"
           Id="Package\SC MC1\MC1LMusr\SC DataUpdate"
           TopLeft="135.5,1646.5" />
         <NodeLayout
-          Size="156,43"
+          Size="156,43.2"
           Id="Package\SC MC1\MC1LMusr\SC dominanthistory\dominanthistory"
           TopLeft="91.9583302692822,114.416659983496" />
         <NodeLayout
-          Size="151,43"
+          Size="151.2,43.2"
           Id="Package\SC MC1\MC1LMusr\SC dominanthistory\EST Trunc dest"
           TopLeft="101.291661441947,19.4666597859066" />
         <NodeLayout
-          Size="131,43"
+          Size="131.2,43.2"
           Id="Package\SC MC1\MC1LMusr\SC dominanthistory\Insert LOG"
           TopLeft="109.458330269282,216.416659983496" />
         <EdgeLayout
@@ -8519,8 +8519,8 @@ where leroy_sku is not null</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="438,313"
-          Size="438,356"
+          PanelSize="438.4,312.8"
+          Size="438.4,356"
           Id="Package\SC MC1\MC1LMusr\SC dominanthistory"
           TopLeft="527.027770006409,2163.22777388152" />
         <NodeLayout
@@ -8566,7 +8566,9 @@ where leroy_sku is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8600,30 +8602,32 @@ where leroy_sku is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="438,313"
-          Size="438,43"
+          Size="438.4,43.2"
           Id="Package\SC MC1\MC1LMusr\SC LocalIndex"
           TopLeft="106.20833159176,1745.78332946291" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\SC MC1\MC1LMusr\SC Price\Insert LOG"
           TopLeft="304,621.5" />
         <NodeLayout
-          Size="351,42"
+          Size="351.2,41.6"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE NIEDZIELA\EST DEL LAST 60 DAYS AND BEFORE 1096 (3 years) dest"
           TopLeft="27,5.5" />
         <NodeLayout
-          Size="158,42"
+          Size="158.4,41.6"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE NIEDZIELA\Foreach Loop Over Quarters\DF Pricing Price"
           TopLeft="11.5,107.5" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE NIEDZIELA\Foreach Loop Over Quarters\Execute SQL Task"
           TopLeft="5.50000000000001,5.5" />
         <EdgeLayout
@@ -8651,12 +8655,12 @@ where leroy_sku is not null</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="181,205"
-          Size="181,248"
+          PanelSize="180.8,204.8"
+          Size="180.8,248"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE NIEDZIELA\Foreach Loop Over Quarters"
           TopLeft="14,209.5" />
         <NodeLayout
-          Size="198,42"
+          Size="198.4,41.6"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE NIEDZIELA\GET Quarters and dates"
           TopLeft="5.50000000000001,107.5" />
         <EdgeLayout
@@ -8718,16 +8722,16 @@ where leroy_sku is not null</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="383,513"
-          Size="383,556"
+          PanelSize="383.2,512.8"
+          Size="383.2,556"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE NIEDZIELA"
           TopLeft="5.50000000000006,5.5" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE PON-SOB\DF ___Pricing Price"
           TopLeft="5.50000000000001,107.5" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE PON-SOB\EST Delete dest"
           TopLeft="14.5,5.5" />
         <EdgeLayout
@@ -8755,7 +8759,7 @@ where leroy_sku is not null</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="188,205"
+          PanelSize="188,204.8"
           Size="188,248"
           Id="Package\SC MC1\MC1LMusr\SC Price\SC PRICE PON-SOB"
           TopLeft="275,159.5" />
@@ -8830,36 +8834,46 @@ where leroy_sku is not null</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="469,719"
-          Size="469,762"
+          PanelSize="468.8,719.2"
+          Size="468.8,761.6"
           Id="Package\SC MC1\MC1LMusr\SC Price"
           TopLeft="5.50000000000011,5.5" />
         <NodeLayout
-          Size="185,42"
+          Size="184.8,41.6"
           Id="Package\SC MC1\MC1LMusr\SC PriceSource\DF Pricing PriceSource"
-          TopLeft="5.50000000000003,107.5" />
+          TopLeft="105.499996026357,65.0333329958382" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\SC MC1\MC1LMusr\SC PriceSource\EST Trunc dest"
           TopLeft="24.5,5.5" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\SC MC1\MC1LMusr\SC PriceSource\Insert LOG"
           TopLeft="130,180.5" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\SC MC1\MC1LMusr\SC PriceSource\PriceSource Arch SCD"
+          TopLeft="99,273" />
         <EdgeLayout
           Id="Package\SC MC1\MC1LMusr\SC PriceSource.PrecedenceConstraints[Constraint]"
-          TopLeft="100,47.5">
+          TopLeft="179.7,26.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="18.1999960263573,38.7333329958382"
               Start="0,0"
-              End="0,52.5">
+              End="18.1999960263573,31.2333329958382">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="14.1999960263573,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.1999960263573,0"
+                    Point2="18.1999960263573,0"
+                    Point3="18.1999960263573,4" />
+                  <mssgle:LineSegment
+                    End="18.1999960263573,31.2333329958382" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8870,30 +8884,18 @@ where leroy_sku is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SC MC1\MC1LMusr\SC PriceSource.PrecedenceConstraints[Constraint 1]"
-          TopLeft="98,149.5">
+          TopLeft="196.349998013179,106.633332995838">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="97,31"
+              EndConnector="0,73.8666670041618"
               Start="0,0"
-              End="97,23.5">
+              End="0,66.3666670041618">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.5"
-                    Point2="0,15.5"
-                    Point3="4,15.5" />
-                  <mssgle:LineSegment
-                    End="93,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="93,15.5"
-                    Point2="97,15.5"
-                    Point3="97,19.5" />
-                  <mssgle:LineSegment
-                    End="97,23.5" />
+                    End="0,66.3666670041618" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8902,10 +8904,6 @@ where leroy_sku is not null</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\SC MC1\MC1LMusr\SC PriceSource\PriceSource Arch SCD"
-          TopLeft="99,273" />
         <EdgeLayout
           Id="Package\SC MC1\MC1LMusr\SC PriceSource.PrecedenceConstraints[Constraint 2]"
           TopLeft="192.25,222.5">
@@ -8929,12 +8927,12 @@ where leroy_sku is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="289,370"
-          Size="172,43"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="295.2,369.6"
+          Size="295.2,412.8"
           Id="Package\SC MC1\MC1LMusr\SC PriceSource"
-          TopLeft="138,827.5" />
+          TopLeft="136.33333339956,828.366666673555" />
         <NodeLayout
           Size="171,42"
           Id="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product"
@@ -8947,6 +8945,10 @@ where leroy_sku is not null</property>
           Size="130,42"
           Id="Package\SC MC1\MC1LMusr\SC Product\Insert LOG"
           TopLeft="29,175.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\SC MC1\MC1LMusr\SC Product\Product Arch SCD"
+          TopLeft="25,253" />
         <EdgeLayout
           Id="Package\SC MC1\MC1LMusr\SC Product.PrecedenceConstraints[Constraint]"
           TopLeft="89.8333333333333,48.1666666666667">
@@ -8966,7 +8968,9 @@ where leroy_sku is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8988,13 +8992,11 @@ where leroy_sku is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162,42"
-          Id="Package\SC MC1\MC1LMusr\SC Product\Product Arch SCD"
-          TopLeft="25,253" />
         <EdgeLayout
           Id="Package\SC MC1\MC1LMusr\SC Product.PrecedenceConstraints[Constraint 2]"
           TopLeft="94,217.5">
@@ -9026,42 +9028,44 @@ where leroy_sku is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="235,354"
-          Size="235,43"
+          Size="235.2,43.2"
           Id="Package\SC MC1\MC1LMusr\SC Product"
           TopLeft="149,1237.5" />
         <EdgeLayout
           Id="Package\SC MC1\MC1LMusr.PrecedenceConstraints[Constraint]"
-          TopLeft="240,767.5">
+          TopLeft="239.9,767.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-16.0000000000001,60"
+              EndConnector="44.0333333995603,61.2666666735545"
               Start="0,0"
-              End="-16.0000000000001,52.5">
+              End="44.0333333995603,53.7666666735545">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,26.6333333367772" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
+                    Point1="0,26.6333333367772"
+                    Point2="0,30.6333333367772"
+                    Point3="4,30.6333333367772" />
                   <mssgle:LineSegment
-                    End="-12.0000000000001,30" />
+                    End="40.0333333995603,30.6333333367772" />
                   <mssgle:CubicBezierSegment
-                    Point1="-12.0000000000001,30"
-                    Point2="-16.0000000000001,30"
-                    Point3="-16.0000000000001,34" />
+                    Point1="40.0333333995603,30.6333333367772"
+                    Point2="44.0333333995603,30.6333333367772"
+                    Point3="44.0333333995603,34.6333333367772" />
                   <mssgle:LineSegment
-                    End="-16.0000000000001,52.5" />
+                    End="44.0333333995603,53.7666666735545" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9072,30 +9076,24 @@ where leroy_sku is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SC MC1\MC1LMusr.PrecedenceConstraints[Constraint 1]"
-          TopLeft="224,870.5">
+          TopLeft="283.93333339956,1241.16666667355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42.5,367"
+              EndConnector="100.26666660044,17.9333333264453"
               Start="0,0"
-              End="42.5,359.5">
+              End="92.7666666004396,17.9333333264453">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,179.5" />
+                    End="0,13.9333333264453" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,179.5"
-                    Point2="0,183.5"
-                    Point3="4,183.5" />
+                    Point1="0,13.9333333264453"
+                    Point2="0,17.9333333264453"
+                    Point3="4,17.9333333264453" />
                   <mssgle:LineSegment
-                    End="38.5,183.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.5,183.5"
-                    Point2="42.5,183.5"
-                    Point3="42.5,187.5" />
-                  <mssgle:LineSegment
-                    End="42.5,359.5" />
+                    End="92.7666666004396,17.9333333264453" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9209,50 +9207,50 @@ where leroy_sku is not null</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="977,2573"
-          Size="977,2616"
+          PanelSize="976.8,2572.8"
+          Size="976.8,2616"
           Id="Package\SC MC1\MC1LMusr"
           TopLeft="5.50000000000023,5.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="988,2677"
+          PanelSize="988,2676.8"
           Size="988,2720"
           Id="Package\SC MC1"
           TopLeft="422.374993788079,107.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="667.874993788079,47.5">
+          TopLeft="667.674993788079,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="248.5,60"
+              EndConnector="248.7,60.4"
               Start="0,0"
-              End="248.5,52.5">
+              End="248.7,52.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,26.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
+                    Point1="0,26.2"
+                    Point2="0,30.2"
+                    Point3="4,30.2" />
                   <mssgle:LineSegment
-                    End="244.5,30" />
+                    End="244.7,30.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="244.5,30"
-                    Point2="248.5,30"
-                    Point3="248.5,34" />
+                    Point1="244.7,30.2"
+                    Point2="248.7,30.2"
+                    Point3="248.7,34.2" />
                   <mssgle:LineSegment
-                    End="248.5,52.5" />
+                    End="248.7,52.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="116.25,35,16,16"
+              BoundingBox="116.35,35.2,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9602,11 +9600,11 @@ where leroy_sku is not null</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="277,42"
+          Size="276.8,41.6"
           Id="Package\SC MC1\MC1LMusr\SC PriceSource\DF Pricing PriceSource\OLE DB Destination Pricing PriceSource"
           TopLeft="5.50000000000003,107.5" />
         <NodeLayout
-          Size="276,42"
+          Size="276,41.6"
           Id="Package\SC MC1\MC1LMusr\SC PriceSource\DF Pricing PriceSource\ADO NET Source mc1lmusr pricesource"
           TopLeft="6,5.5" />
         <EdgeLayout
@@ -9644,67 +9642,6 @@ where leroy_sku is not null</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SC MC1\MC1LMusr\SC PriceSource\DF Pricing PriceSource\OLE DB Destination Pricing PriceSource">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="254.666666666667,42"
-          Id="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\OLE DB Destination Pricing Product"
-          TopLeft="6.50000000000003,107.5" />
-        <NodeLayout
-          Size="257.333333333334,42"
-          Id="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\ADO NET Source mc1lmusr Product"
-          TopLeft="5.5,5.5" />
-        <EdgeLayout
-          Id="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product.Paths[ADO NET Source Output]"
-          TopLeft="134,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\ADO NET Source mc1lmusr Product">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\OLE DB Destination Pricing Product">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10012,6 +9949,67 @@ where leroy_sku is not null</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="254.666666666667,42"
+          Id="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\OLE DB Destination Pricing Product"
+          TopLeft="6.50000000000003,107.5" />
+        <NodeLayout
+          Size="257.333333333334,42"
+          Id="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\ADO NET Source mc1lmusr Product"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product.Paths[ADO NET Source Output]"
+          TopLeft="134,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\ADO NET Source mc1lmusr Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SC MC1\MC1LMusr\SC Product\DF Pricing Product\OLE DB Destination Pricing Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\SC MC1\MC1LMusr\SC Product\Product Arch SCD">
     <LayoutInfo>
       <GraphLayout
@@ -10242,19 +10240,6 @@ where leroy_sku is not null</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SC MC1\MC1LMusr\SC Product\Product Arch SCD\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\SC MC1\MC1LMusr\SC Product\Product Arch SCD\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -10429,6 +10414,19 @@ where leroy_sku is not null</property>
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SC MC1\MC1LMusr\SC Product\Product Arch SCD\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
