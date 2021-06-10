@@ -1,0 +1,1932 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/5/2018 3:00:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DIO046"
+  DTS:CreatorName="PL\lzalewski"
+  DTS:DTSID="{DA130075-CFCB-48A4-A589-A8FCDE24CC2A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="ETL z SFTP"
+  DTS:PackageType="5"
+  DTS:VersionBuild="211"
+  DTS:VersionGUID="{3AFAE462-A168-4FAC-87DD-C8E79290F8DB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[APS_Pyxis_Extract]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5D592C00-8FE2-462D-8A89-43C2DEF38D76}"
+      DTS:ObjectName="APS_Pyxis_Extract">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::d_Source_Filepath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="\\pdbmssqllm01\e$\ETL_Files\APS\PyxisExtract\extract.20210330.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Magasin"
+              DTS:DTSID="{EEBAB74F-4339-46D4-B7ED-E5CDD8C8FEB2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Reference"
+              DTS:DTSID="{3C2654E6-374A-4210-BA45-9AC081B43C82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Division"
+              DTS:DTSID="{EA456FA5-BEE4-461D-B88A-7F638DBFA6F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_SubDivision"
+              DTS:DTSID="{42C5C3D7-7D05-4237-9DB4-2D632D081860}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Type"
+              DTS:DTSID="{06DF3A5E-BAB3-4F79-981F-667434990900}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_SubType"
+              DTS:DTSID="{86FC4168-8E80-4805-B865-0DF64062ABD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="d_Reference"
+              DTS:DTSID="{6C8F8F4E-1DDA-4B23-9A17-8E653FC0BFAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="d_Reference_Quantity"
+              DTS:DTSID="{24BDB3B3-C88C-4275-9A38-E90CE93A0F0B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="d_Gamut"
+              DTS:DTSID="{1C336340-7603-4CFA-8265-9776D544198D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Contractor"
+              DTS:DTSID="{EE5907E4-94AC-48AF-A449-0DA861D4CFE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="d_Contractor"
+              DTS:DTSID="{4B40F342-6B47-4216-88A9-2CF70B09D815}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Order"
+              DTS:DTSID="{F44949E9-071D-4BD9-B42F-8163C2935639}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="304"
+              DTS:TextQualified="True"
+              DTS:ObjectName="datestamp_order"
+              DTS:DTSID="{D28E7767-E527-4BFC-942D-FE8945A043BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Order_Status"
+              DTS:DTSID="{CF4E89EC-8811-4303-9FE3-B0F121C41B9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="d_Order_Status"
+              DTS:DTSID="{76E6FDB7-023E-405F-A700-8D570C3C8642}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="304"
+              DTS:TextQualified="True"
+              DTS:ObjectName="datestamp_Order_Status_Modif"
+              DTS:DTSID="{DA0B47BD-93BD-42E4-8558-B06259B26B27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Line"
+              DTS:DTSID="{BD4CE00E-BC93-4692-A942-9C00BA4E3177}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Line_Type"
+              DTS:DTSID="{62627B4C-EF06-4024-A8C4-8AC2827989F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="d_Line_Type"
+              DTS:DTSID="{680B9E43-6C2D-4044-AA96-9AFA286CBCBC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_Line_Status"
+              DTS:DTSID="{DB511FDD-5703-46E6-A181-F1596FEB071A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="d_Line_Status"
+              DTS:DTSID="{B6553E5C-5A4A-4D9E-8954-276FC9D4C01E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="304"
+              DTS:TextQualified="True"
+              DTS:ObjectName="datestamp_Line_Status"
+              DTS:DTSID="{60515856-9504-4B54-81A1-3D5651869FDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="304"
+              DTS:TextQualified="True"
+              DTS:ObjectName="datestamp_Line_Type"
+              DTS:DTSID="{0E157158-F951-4AEE-BDCF-B1EB014E347A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="is_REF_MZ"
+              DTS:DTSID="{EBBC8BAB-FF1F-440C-8581-83BAE70C5F5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_supp_order"
+              DTS:DTSID="{A1463ED9-D0F8-4B0F-B55F-A657B4109292}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MSSQL_destination]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CDCD6250-8352-4274-B451-71DC1ECD90C6}"
+      DTS:ObjectName="MSSQL_destination">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[$Project::MSSQL_destination_InitialCatalog]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Project::MSSQL_destination_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::MSSQL_destination_ServerName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Project::MSSQL_destination_UserName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pDBmssqlLM01;User ID=data_collector;Initial Catalog=STAGE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC+jzbpPROdZ3npKQMWvYdzAAAAAASAAACgAAAAEAAAAKBna0ect9rjC4uoSbJwltUgAAAAXSOHsr0FlNHZ88GWg0YjLT96Lxb1HTCs5CqINTdJSAYUAAAAPP6Kp9E3tfhmz45+A50pMEeHNq8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{01BA7B4C-6960-43B7-94F1-0E63506A5F2E}"
+      DTS:ObjectName="d_Parameter">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">-date 20210330|</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC1C629B-9C14-47F3-A532-C5CCC70C90CF}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(SUBSTRING( @[$Package::d_Parameter] , (FINDSTRING(@[$Package::d_Parameter],&quot;-date&quot;, 1 )  +1+ LEN(&quot;-date&quot;)), FINDSTRING((SUBSTRING( @[$Package::d_Parameter] , (FINDSTRING(@[$Package::d_Parameter],&quot;-date&quot;, 1 )  +1+ LEN(&quot;-date&quot;)), 200 )),&quot;|&quot;, 1 ) -1))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Date">
+      <DTS:VariableValue
+        DTS:DataType="8">20210330</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FBE72515-B731-4307-810A-F3E7DDA0839C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::d_WinSCP_Filepath_Dest]&#xA;+&quot;extract.&quot;&#xA;+ @[User::Date]+&quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="d_Source_Filepath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\pdbmssqllm01\e$\ETL_Files\APS\PyxisExtract\extract.20210330.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{230716F0-CB7B-48BA-8D8C-7ED1C7DBA354}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="d_WinSCP_Arguments">
+      <DTS:VariableValue
+        DTS:DataType="8">/script=\\pdbmssqllm01\e$\ETL_Files\APS\PyxisExtract\script.txt /parameter </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CAF4592B-5402-46AD-93F0-63862C15CBB9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="d_WinSCP_Executable">
+      <DTS:VariableValue
+        DTS:DataType="8">\\pdbmssqllm01\e$\ETL_Files\APS\WinSCP.exe</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{32F2DF5C-334E-4197-904A-4290659FA3CC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="d_WinSCP_Filepath_Dest">
+      <DTS:VariableValue
+        DTS:DataType="8">\\pdbmssqllm01\e$\ETL_Files\APS\PyxisExtract\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute Process Task"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{BF1E7D94-56F7-4452-932D-01DFEE980C4C}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Process Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::d_WinSCP_Arguments] + @[User::Date]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::d_WinSCP_Executable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="\\pdbmssqllm01\e$\ETL_Files\APS\WinSCP.exe"
+          Arguments="/script=\\pdbmssqllm01\e$\ETL_Files\APS\PyxisExtract\script.txt /parameter 20210330"
+          WorkingDirectory="\\pdbmssqllm01\e$\ETL_Files\APS\" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SC APS_PyxisExtract"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{DC66400A-CE92-4CA2-AAFA-7C4AF9F4775D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SC APS_PyxisExtract">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{FB0550BE-5839-4C84-A397-96747F20EB52}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT APS_PyxisExtract"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Dodanie daty"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Output].Columns[ID_YMD]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Output].Columns[ID_YMD]"
+                          name="ID_YMD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_I4)@[User::Date]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I4)@[User::Date]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1045"
+                  name="GET APS_Pyxis_Extract"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[APS_Pyxis_Extract]"
+                      connectionManagerRefId="Package.ConnectionManagers[APS_Pyxis_Extract]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Magasin]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Magasin]"
+                          length="3"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Magasin]"
+                          name="ID_Magasin"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Reference]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Reference]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Reference]"
+                          name="ID_Reference"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Division]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Division]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Division]"
+                          name="ID_Division"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_SubDivision]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_SubDivision]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_SubDivision]"
+                          name="ID_SubDivision"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Type]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Type]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Type]"
+                          name="ID_Type"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_SubType]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_SubType]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_SubType]"
+                          name="ID_SubType"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Reference]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Reference]"
+                          length="255"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Reference]"
+                          name="d_Reference"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[n_Quantity]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Reference_Quantity]"
+                          length="50"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[n_Quantity]"
+                          name="n_Quantity"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Gamut]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Gamut]"
+                          length="1"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Gamut]"
+                          name="d_Gamut"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Contractor]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Contractor]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Contractor]"
+                          name="ID_Contractor"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Contractor]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Contractor]"
+                          length="255"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Contractor]"
+                          name="d_Contractor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Order]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Order]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Order]"
+                          name="ID_Order"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_order]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_order]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_order]"
+                          name="datestamp_order"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Order_Status]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Order_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Order_Status]"
+                          name="ID_Order_Status"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Order_Status]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Order_Status]"
+                          length="50"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Order_Status]"
+                          name="d_Order_Status"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Order_Status_Modif]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_Order_Status_Modif]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Order_Status_Modif]"
+                          name="datestamp_Order_Status_Modif"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Line]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line]"
+                          name="ID_Line"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line_Type]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Line_Type]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line_Type]"
+                          name="ID_Line_Type"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Line_Type]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Line_Type]"
+                          length="50"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Line_Type]"
+                          name="d_Line_Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line_Status]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Line_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line_Status]"
+                          name="ID_Line_Status"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Line_Status]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Line_Status]"
+                          length="50"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Line_Status]"
+                          name="d_Line_Status"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Line_Status]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_Line_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Line_Status]"
+                          name="datestamp_Line_Status"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Line_Type]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_Line_Type]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Line_Type]"
+                          name="datestamp_Line_Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[is_REF_MZ]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[is_REF_MZ]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[is_REF_MZ]"
+                          name="is_REF_MZ"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[id_supp_order]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[id_supp_order]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[id_supp_order]"
+                          name="id_supp_order"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Magasin]"
+                          dataType="wstr"
+                          length="3"
+                          name="ID_Magasin" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Reference]"
+                          dataType="numeric"
+                          name="ID_Reference"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Division]"
+                          dataType="numeric"
+                          name="ID_Division"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_SubDivision]"
+                          dataType="numeric"
+                          name="ID_SubDivision"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Type]"
+                          dataType="numeric"
+                          name="ID_Type"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_SubType]"
+                          dataType="numeric"
+                          name="ID_SubType"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Reference]"
+                          dataType="wstr"
+                          length="255"
+                          name="d_Reference" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Reference_Quantity]"
+                          dataType="wstr"
+                          length="50"
+                          name="d_Reference_Quantity" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Gamut]"
+                          dataType="wstr"
+                          length="1"
+                          name="d_Gamut" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Contractor]"
+                          dataType="numeric"
+                          name="ID_Contractor"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Contractor]"
+                          dataType="wstr"
+                          length="255"
+                          name="d_Contractor" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Order]"
+                          dataType="numeric"
+                          name="ID_Order"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_order]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_order" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Order_Status]"
+                          dataType="numeric"
+                          name="ID_Order_Status"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Order_Status]"
+                          dataType="wstr"
+                          length="50"
+                          name="d_Order_Status" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_Order_Status_Modif]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_Order_Status_Modif" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Line]"
+                          dataType="numeric"
+                          name="ID_Line"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Line_Type]"
+                          dataType="numeric"
+                          name="ID_Line_Type"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Line_Type]"
+                          dataType="wstr"
+                          length="50"
+                          name="d_Line_Type" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[ID_Line_Status]"
+                          dataType="numeric"
+                          name="ID_Line_Status"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[d_Line_Status]"
+                          dataType="wstr"
+                          length="50"
+                          name="d_Line_Status" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_Line_Status]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_Line_Status" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[datestamp_Line_Type]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_Line_Type" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[is_REF_MZ]"
+                          dataType="numeric"
+                          name="is_REF_MZ"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].ExternalColumns[id_supp_order]"
+                          dataType="numeric"
+                          name="id_supp_order"
+                          precision="18" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination STAGE FTP APS_Pyxis_Extraction"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[FTP].[APS_Pyxis_Extract]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[MSSQL_destination]"
+                      connectionManagerRefId="Package.ConnectionManagers[MSSQL_destination]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Magasin]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="ID_Magasin"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Magasin]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Magasin]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Reference]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Reference"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Reference]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Reference]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Division]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Division"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Division]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Division]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_SubDivision]"
+                          cachedDataType="numeric"
+                          cachedName="ID_SubDivision"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_SubDivision]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_SubDivision]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Type]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Type"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Type]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Type]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_SubType]"
+                          cachedDataType="numeric"
+                          cachedName="ID_SubType"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_SubType]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_SubType]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[d_Reference]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="d_Reference"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Reference]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Reference]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[n_Quantity]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="n_Quantity"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[n_Quantity]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[n_Quantity]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[d_Gamut]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="d_Gamut"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Gamut]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Gamut]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Contractor]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Contractor"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Contractor]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Contractor]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[d_Contractor]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="d_Contractor"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Contractor]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Contractor]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Order]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Order"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Order]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Order]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Order_Status]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Order_Status"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Order_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Order_Status]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[d_Order_Status]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="d_Order_Status"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Order_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Order_Status]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Line]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Line"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Line]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Line_Type]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Line_Type"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Line_Type]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line_Type]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[d_Line_Type]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="d_Line_Type"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Line_Type]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Line_Type]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_Line_Status]"
+                          cachedDataType="numeric"
+                          cachedName="ID_Line_Status"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Line_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[ID_Line_Status]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[d_Line_Status]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="d_Line_Status"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Line_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[d_Line_Status]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[is_REF_MZ]"
+                          cachedDataType="numeric"
+                          cachedName="is_REF_MZ"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[is_REF_MZ]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[is_REF_MZ]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[ID_YMD]"
+                          cachedDataType="i4"
+                          cachedName="ID_YMD"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_YMD]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Output].Columns[ID_YMD]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[id_supp_order]"
+                          cachedDataType="numeric"
+                          cachedName="id_supp_order"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[id_supp_order]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[id_supp_order]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[datestamp_order]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="datestamp_order"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_order]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_order]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[datestamp_Order_Status_Modif]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="datestamp_Order_Status_Modif"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_Order_Status_Modif]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Order_Status_Modif]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[datestamp_Line_Status]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="datestamp_Line_Status"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_Line_Status]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Line_Status]" />
+                        <inputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].Columns[datestamp_Line_Type]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="datestamp_Line_Type"
+                          externalMetadataColumnId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_Line_Type]"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output].Columns[datestamp_Line_Type]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_YMD]"
+                          dataType="i4"
+                          name="ID_YMD" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Magasin]"
+                          dataType="wstr"
+                          length="3"
+                          name="ID_Magasin" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Reference]"
+                          dataType="i4"
+                          name="ID_Reference" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Division]"
+                          dataType="ui1"
+                          name="ID_Division" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_SubDivision]"
+                          dataType="ui1"
+                          name="ID_SubDivision" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Type]"
+                          dataType="ui1"
+                          name="ID_Type" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_SubType]"
+                          dataType="ui1"
+                          name="ID_SubType" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Reference]"
+                          dataType="wstr"
+                          length="255"
+                          name="d_Reference" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[n_Quantity]"
+                          dataType="numeric"
+                          name="n_Quantity"
+                          precision="9"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Gamut]"
+                          dataType="wstr"
+                          length="1"
+                          name="d_Gamut" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Contractor]"
+                          dataType="i4"
+                          name="ID_Contractor" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Contractor]"
+                          dataType="wstr"
+                          length="255"
+                          name="d_Contractor" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Order]"
+                          dataType="i4"
+                          name="ID_Order" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_order]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_order"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Order_Status]"
+                          dataType="wstr"
+                          length="500"
+                          name="ID_Order_Status" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Order_Status]"
+                          dataType="wstr"
+                          length="50"
+                          name="d_Order_Status" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_Order_Status_Modif]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_Order_Status_Modif"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Line]"
+                          dataType="i2"
+                          name="ID_Line" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Line_Type]"
+                          dataType="ui1"
+                          name="ID_Line_Type" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Line_Type]"
+                          dataType="wstr"
+                          length="50"
+                          name="d_Line_Type" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[ID_Line_Status]"
+                          dataType="ui1"
+                          name="ID_Line_Status" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[d_Line_Status]"
+                          dataType="wstr"
+                          length="50"
+                          name="d_Line_Status" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_Line_Status]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_Line_Status"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[datestamp_Line_Type]"
+                          dataType="dbTimeStamp2"
+                          name="datestamp_Line_Type"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[is_REF_MZ]"
+                          dataType="ui1"
+                          name="is_REF_MZ" />
+                        <externalMetadataColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input].ExternalColumns[id_supp_order]"
+                          dataType="i4"
+                          name="id_supp_order" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract.Paths[Derived Column Output]"
+                  endId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract.Paths[Flat File Source Output]"
+                  endId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SC APS_PyxisExtract\Execute SQL Task DELETE DEST"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{53E427B5-0860-4C2E-AB67-F2FCC02A79D4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task DELETE DEST"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CDCD6250-8352-4274-B451-71DC1ECD90C6}"
+              SQLTask:SqlStatementSource="DELETE FROM STAGE.FTP.APS_Pyxis_Extract WHERE ID_YMD = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Date"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="8" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SC APS_PyxisExtract\Execute SQL Task DELETE DEST DATA"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B8262FBD-2086-44FB-8234-938D28B5DC62}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task DELETE DEST DATA"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CDCD6250-8352-4274-B451-71DC1ECD90C6}"
+              SQLTask:SqlStatementSource="DELETE FROM STAGE.FTP.APS_Pyxis_Extract WHERE ID_YMD = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Date"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="8" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SC APS_PyxisExtract\Insert LOG"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{778568B8-BC70-4896-B436-EDF97F5F6AAE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert LOG"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CDCD6250-8352-4274-B451-71DC1ECD90C6}"
+              SQLTask:SqlStatementSource="/*Insert into LOG*/&#xA;insert into Stage.CONFIG.ETL_Tables (d_Source_Server,d_Source_DB,d_Source_Schema,d_Source_Table,datestamp_Refresh,d_Type,d_ETL_Type,d_ETL_Source,d_ETL_Package)&#xA;values (&#xA; /*d_Source_Server*/'ppllmttpyxa01',&#xA; /*d_Source_DB*/'FTP',&#xA; /*d_Source_Schema*/'BUshare',&#xA; /*d_Source_Table*/CONCAT('extract.',?),&#xA; /*datestamp_Refresh*/convert(datetime2(2),getdate()),&#xA; /*d_Type*/'IMPORT',&#xA; /*d_ETL_Type*/'SSIS',&#xA; /*d_ETL_Source*/'SSIS_Imports',&#xA; /*d_ETL_Package*/'ETL z SFTP'&#xA; )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Date"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="8" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SC APS_PyxisExtract.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6AB2EE55-8902-46E2-A2BA-3F8D2F2EEFD2}"
+          DTS:From="Package\SC APS_PyxisExtract\Execute SQL Task DELETE DEST"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SC APS_PyxisExtract.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{0E70AF1D-E43C-4D43-8E22-F7DCF7D444AA}"
+          DTS:From="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SC APS_PyxisExtract\Insert LOG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SC APS_PyxisExtract.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{296065B4-B6DB-4999-B931-08CCDF422726}"
+          DTS:From="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\SC APS_PyxisExtract\Execute SQL Task DELETE DEST DATA"
+          DTS:Value="1" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{57B12C79-CDA3-426B-B994-C13FA5F97018}"
+      DTS:From="Package\Execute Process Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SC APS_PyxisExtract" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Execute Process Task"
+          TopLeft="147.5,5.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract"
+          TopLeft="236.5,107.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\SC APS_PyxisExtract\Execute SQL Task DELETE DEST"
+          TopLeft="211.5,5.5" />
+        <NodeLayout
+          Size="262,42"
+          Id="Package\SC APS_PyxisExtract\Execute SQL Task DELETE DEST DATA"
+          TopLeft="196.5,209.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\SC APS_PyxisExtract\Insert LOG"
+          TopLeft="5.50000000000006,209.5" />
+        <EdgeLayout
+          Id="Package\SC APS_PyxisExtract.PrecedenceConstraints[Constraint]"
+          TopLeft="327.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SC APS_PyxisExtract.PrecedenceConstraints[Constraint 1]"
+          TopLeft="298.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-228,60"
+              Start="0,0"
+              End="-228,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3137254901961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3137254901961"
+                    Point2="0,24.3137254901961"
+                    Point3="-4,24.3137254901961" />
+                  <mssgle:LineSegment
+                    End="-224,24.3137254901961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-224,24.3137254901961"
+                    Point2="-228,24.3137254901961"
+                    Point3="-228,28.3137254901961" />
+                  <mssgle:LineSegment
+                    End="-228,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SC APS_PyxisExtract.PrecedenceConstraints[Constraint 2]"
+          TopLeft="356.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29,60"
+              Start="0,0"
+              End="-29,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3137254901961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3137254901961"
+                    Point2="0,24.3137254901961"
+                    Point3="-4,24.3137254901961" />
+                  <mssgle:LineSegment
+                    End="-25,24.3137254901961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25,24.3137254901961"
+                    Point2="-29,24.3137254901961"
+                    Point3="-29,28.3137254901961" />
+                  <mssgle:LineSegment
+                    End="-29,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-29.74134765625,29.3137254901961,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="464,307"
+          Size="464,350"
+          Id="Package\SC APS_PyxisExtract"
+          TopLeft="5.50000000000006,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="237.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,43"
+          Id="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\GET APS_Pyxis_Extract"
+          TopLeft="77,5.5" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\Dodanie daty"
+          TopLeft="100.5,108.5" />
+        <NodeLayout
+          Size="331,42"
+          Id="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction"
+          TopLeft="5.50000000000003,210.5" />
+        <EdgeLayout
+          Id="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract.Paths[Flat File Source Output]"
+          TopLeft="171,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract.Paths[Derived Column Output]"
+          TopLeft="171,150.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SC APS_PyxisExtract\DFT APS_PyxisExtract\OLE DB Destination STAGE FTP APS_Pyxis_Extraction">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

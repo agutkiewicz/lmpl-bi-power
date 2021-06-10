@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/24/2018 2:31:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DIO046"
+  DTS:CreatorName="PL\lzalewski"
+  DTS:DTSID="{8D7EED1F-2CB9-4A55-91B5-D214388C37B1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="ETL_Magasins"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{69CEDC83-5C02-496A-A0DD-90530CB6C726}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Magasin.ProdMagDB.lm]"
+      DTS:CreationName="ADO.NET:Ingres.Client.IngresConnection, Ingres.Client, Version=2.1.0.0, Culture=neutral, PublicKeyToken=363043b363d069c5"
+      DTS:DTSID="{FC0BE183-887B-48C6-B8CE-069EF25D158D}"
+      DTS:ObjectName="Magasin.ProdMagDB.lm">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Server=10.44.4.1;User ID=lm;Port=AA7;Database=ProdMagDB;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

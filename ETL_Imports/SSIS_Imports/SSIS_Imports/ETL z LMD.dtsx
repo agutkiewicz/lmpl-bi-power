@@ -1,0 +1,635 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/19/2021 1:12:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PDBMSSQLLM01"
+  DTS:CreatorName="PL\ext_agutkiewicz"
+  DTS:DTSID="{EC82C5A0-323D-4CD0-9B90-0C3B61265158}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{4958E643-F4A8-4F06-B0A0-419FCFB90469}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[pdbmssqllm01.STAGE.data_collector]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{412CE90E-A4DD-4ECC-9406-96FEEFA09DA0}"
+      DTS:ObjectName="pdbmssqllm01.STAGE.data_collector">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pdbmssqllm01;User ID=data_collector;Initial Catalog=STAGE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC3aO/PF0ov5PBrQhVg83nbAAAAAASAAACgAAAAEAAAAMWumcCIf6IPYSlR6xlG510gAAAABb8ps6sF+A2wRbeJaxDesLEZg0y0BePmTW66fMTlVAwUAAAAvrPBRYy/gIzldzslY8Q9xOGWXek</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[transport.pl.corp.leroymerlin.com.drv.bsk]"
+      DTS:CreationName="ADO.NET:MySql.Data.MySqlClient.MySqlConnection, MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
+      DTS:DTSID="{E5DEC974-3F0C-42E8-B952-614571A02F8E}"
+      DTS:ObjectName="transport.pl.corp.leroymerlin.com.drv.bsk">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=transport.pl.corp.leroymerlin.com;user id=bsk;database=drv;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC4yUATxpmZgBSE/eUltDbqAAAAAASAAACgAAAAEAAAADLVOKVPlxSYS0rTLNisR14gAAAAe7dAvj/Kz7DmDkGUfK8IJYmjNL5w+r42y9NYJ60/rEMUAAAAyye2GlCic9etEPalNKNwegRflg4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4D480122-91FF-4616-82D9-90B974CE058B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{4F09CCD6-7F07-45E1-8518-24F0B99E9436}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Data Flow Task\ADO NET Source"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+                  name="ADO NET Source"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement used by the component to extract data."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM  bsk_zamowienie</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="The Source database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the mode to retrieve external column information"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[transport.pl.corp.leroymerlin.com.drv.bsk]"
+                      connectionManagerRefId="Package.ConnectionManagers[transport.pl.corp.leroymerlin.com.drv.bsk]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output]"
+                      name="ADO NET Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[nr_sklepu]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nr_sklepu]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[nr_sklepu]"
+                          name="nr_sklepu"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[nr_zamowienia]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nr_zamowienia]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[nr_zamowienia]"
+                          name="nr_zamowienia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[data_umowienia]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[data_umowienia]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[data_umowienia]"
+                          name="data_umowienia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[data_dostawy_planowana]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[data_dostawy_planowana]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[data_dostawy_planowana]"
+                          name="data_dostawy_planowana"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[status]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[status]"
+                          length="17"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[status]"
+                          name="status"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nr_sklepu]"
+                          dataType="i4"
+                          name="nr_sklepu" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nr_zamowienia]"
+                          dataType="wstr"
+                          length="255"
+                          name="nr_zamowienia" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[data_umowienia]"
+                          dataType="dbTimeStamp"
+                          name="data_umowienia" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[data_dostawy_planowana]"
+                          dataType="dbTimeStamp"
+                          name="data_dostawy_planowana" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[status]"
+                          dataType="wstr"
+                          length="17"
+                          name="status" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                      isErrorOut="true"
+                      name="ADO NET Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nr_sklepu]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nr_sklepu]"
+                          name="nr_sklepu" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nr_zamowienia]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nr_zamowienia]"
+                          name="nr_zamowienia" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[data_umowienia]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[data_umowienia]"
+                          name="data_umowienia" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[data_dostawy_planowana]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[data_dostawy_planowana]"
+                          name="data_dostawy_planowana" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[status]"
+                          dataType="wstr"
+                          length="17"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[status]"
+                          name="status" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[LMD].[BSK_ZAMOWIENIE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{0AC4E236-811F-42DC-8A69-22D65066DF5A}:invalid"
+                      connectionManagerRefId="{0AC4E236-811F-42DC-8A69-22D65066DF5A}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nr_sklepu]"
+                          cachedDataType="i4"
+                          cachedName="nr_sklepu"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nr_sklepu]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[nr_sklepu]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nr_zamowienia]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="nr_zamowienia"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nr_zamowienia]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[nr_zamowienia]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[data_umowienia]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="data_umowienia"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_umowienia]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[data_umowienia]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[data_dostawy_planowana]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="data_dostawy_planowana"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_dostawy_planowana]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[data_dostawy_planowana]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[status]"
+                          cachedDataType="wstr"
+                          cachedLength="17"
+                          cachedName="status"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                          lineageId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[status]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nr_sklepu]"
+                          dataType="i4"
+                          name="nr_sklepu" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nr_zamowienia]"
+                          dataType="wstr"
+                          length="255"
+                          name="nr_zamowienia" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_umowienia]"
+                          dataType="dbTimeStamp"
+                          name="data_umowienia" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_dostawy_planowana]"
+                          dataType="dbTimeStamp"
+                          name="data_dostawy_planowana" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                          dataType="wstr"
+                          length="255"
+                          name="status" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Data Flow Task.Paths[ADO NET Source Output]"
+                  endId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="ADO NET Source Output"
+                  startId="Package\Sequence Container\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert LOG"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9E399E3B-922F-4E26-8133-C37C08334E3F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert LOG"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{412CE90E-A4DD-4ECC-9406-96FEEFA09DA0}"
+              SQLTask:SqlStatementSource="/*Insert into LOG*/&#xA;insert into Stage.CONFIG.ETL_Tables (d_Source_Server,d_Source_DB,d_Source_Schema,d_Source_Table,datestamp_Refresh,d_Type,d_ETL_Type,d_ETL_Source,d_ETL_Package)&#xA;values (&#xA; /*d_Source_Server*/'transport.pl.corp.leroymerlin.com',&#xA; /*d_Source_DB*/'drv',&#xA; /*d_Source_Schema*/'LMD',&#xA; /*d_Source_Table*/'BSK_ZAMOWIENIE',&#xA; /*datestamp_Refresh*/convert(datetime2(2),getdate()),&#xA; /*d_Type*/'IMPORT',&#xA; /*d_ETL_Type*/'SSIS',&#xA; /*d_ETL_Source*/'SSIS_Imports',&#xA; /*d_ETL_Package*/'ETL z LMD'&#xA; )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\TRUNCATE TABLE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{768D7BE5-4991-46C8-8240-5124D022A469}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE TABLE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{412CE90E-A4DD-4ECC-9406-96FEEFA09DA0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE LMD.BSK_ZAMOWIENIE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{DB91D021-011C-41C6-81D9-F45CA609F168}"
+          DTS:From="Package\Sequence Container\TRUNCATE TABLE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Data Flow Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7E0C4794-4FF7-4DB7-BA81-668727D6C895}"
+          DTS:From="Package\Sequence Container\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Insert LOG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Sequence Container\Data Flow Task"
+          TopLeft="24.5,105.5" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Sequence Container\Insert LOG"
+          TopLeft="21,207.5" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Sequence Container\TRUNCATE TABLE"
+          TopLeft="21,22" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="101.75,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.5"
+              Start="0,0"
+              End="0,34">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="100,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14,60"
+              Start="0,0"
+              End="-14,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-10,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10,30"
+                    Point2="-14,30"
+                    Point3="-14,34" />
+                  <mssgle:LineSegment
+                    End="-14,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="243.2,304.8"
+          Size="243.2,348"
+          Id="Package\Sequence Container"
+          TopLeft="173,112" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Sequence Container\Data Flow Task\ADO NET Source"
+          TopLeft="193,35" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Sequence Container\Data Flow Task\OLE DB Destination"
+          TopLeft="449,293" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="272,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="262.5,216"
+              Start="0,0"
+              End="262.5,208.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,104" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,104"
+                    Point2="0,108"
+                    Point3="4,108" />
+                  <mssgle:LineSegment
+                    End="258.5,108" />
+                  <mssgle:CubicBezierSegment
+                    Point1="258.5,108"
+                    Point2="262.5,108"
+                    Point3="262.5,112" />
+                  <mssgle:LineSegment
+                    End="262.5,208.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Data Flow Task\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

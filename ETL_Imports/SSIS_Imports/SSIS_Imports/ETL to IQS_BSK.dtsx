@@ -1,0 +1,1982 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/18/2020 10:05:06 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PDBMSSQLLM01"
+  DTS:CreatorName="PL\wszczesny"
+  DTS:DTSID="{C721B820-8EB6-4A1B-9B7F-D036C8E9E560}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="ETL to IQS_BSK"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{9825AC78-0D18-4AD5-8818-B340E15AD6AC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BSK]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{313DDC50-C0D0-4560-AB9F-0EAED12E3791}"
+      DTS:ObjectName="BSK">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.10.250\SQLEXPRESS14,1410;User ID=leroymerlin;Initial Catalog=LM_IMPORT;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADDlNoARMYpvfRTibRLQFuEAAAAAASAAACgAAAAEAAAAFcJJNj7lZs2lZeLmYNjrk4oAAAAz0DcQqw1N8xeSWKlcONMiK/nW4xl45IbJbeTgcVZlgx8ffmEpG6xihQAAAD7GIAqg+LU04VT3kzHGviR7jpy0A</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[pdbmssqllm01.DWH.data_collector]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{59AFB928-4CEB-4A4B-9E34-DEC6804A794C}"
+      DTS:ObjectName="pdbmssqllm01.DWH.data_collector">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pdbmssqllm01;User ID=data_collector;Initial Catalog=DWH;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACYiWNJ8EW+cGEjdKq8m1vyAAAAAASAAACgAAAAEAAAAM9olq8jt/xetEK7jCvpM14gAAAA5FPlG44fip89CyQs3LcHKttdEoIT9ShGY3nADe3LK7EUAAAADBxE96hg2tEQz9PLsOn3zw3YyxE</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[pdbmssqllm01.STAGE.data_collector]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{66E21A3F-A185-4CAF-9492-E89BD94D3795}"
+      DTS:ObjectName="pdbmssqllm01.STAGE.data_collector">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pdbmssqllm01;User ID=data_collector;Initial Catalog=STAGE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/HtrDaI0+0SR0/dPFXtc0wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACPfLMrNr7VXx1FxKd48Sh0AAAAAASAAACgAAAAEAAAAC16xzysL1ouDDcWcn19mnEgAAAAD0g0sE5NRwLlOfRXwakN9fyckqeGDp16Q1edIhAo7PgUAAAA8J1DbJ5Gw9kANT5JHs10BWOKE+k</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{97778A11-D630-4D8A-A924-323130B77ABE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Import]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BSK]"
+                  connectionManagerRefId="Package.ConnectionManagers[BSK]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dzien]"
+                      cachedDataType="dbDate"
+                      cachedName="dzien"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dzien]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzien]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[godzina]"
+                      cachedDataType="numeric"
+                      cachedName="godzina"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[godzina]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[godzina]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[program]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="program"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[program]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[program]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nr_sklepu]"
+                      cachedDataType="numeric"
+                      cachedName="nr_sklepu"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nr_sklepu]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nr_sklepu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[e_mail]"
+                      cachedDataType="wstr"
+                      cachedLength="480"
+                      cachedName="e_mail"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[e_mail]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[e_mail]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot]"
+                      cachedDataType="numeric"
+                      cachedName="obrot"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_01]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_01"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_01]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_01]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_02]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_02"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_02]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_02]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_03]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_03"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_03]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_03]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_04]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_04"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_04]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_04]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_05]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_05"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_05]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_05]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_06]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_06"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_06]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_06]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_07]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_07"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_07]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_07]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_08]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_08"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_08]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_08]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_09]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_09"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_09]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_09]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_10]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_10"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_10]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_10]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_11]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_11"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_11]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_11]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_12]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_12"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_12]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_12]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[obrot_dzial_13]"
+                      cachedDataType="numeric"
+                      cachedName="obrot_dzial_13"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_13]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_13]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Formatyzernia]"
+                      cachedDataType="i4"
+                      cachedName="Formatyzernia"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Formatyzernia]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Formatyzernia]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Szycie_obszycie]"
+                      cachedDataType="i4"
+                      cachedName="Szycie_obszycie"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Szycie_obszycie]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Szycie_obszycie]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Butik]"
+                      cachedDataType="i4"
+                      cachedName="Butik"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Butik]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Butik]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Projektowanie]"
+                      cachedDataType="i4"
+                      cachedName="Projektowanie"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Projektowanie]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Projektowanie_KUCHNI]"
+                      cachedDataType="i4"
+                      cachedName="Projektowanie_KUCHNI"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Projektowanie_KUCHNI]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie_KUCHNI]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Klima]"
+                      cachedDataType="i4"
+                      cachedName="Klima"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Klima]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Klima]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Inne]"
+                      cachedDataType="i4"
+                      cachedName="Inne"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inne]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inne]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Obszywanie]"
+                      cachedDataType="i4"
+                      cachedName="Obszywanie"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Obszywanie]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Obszywanie]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[insertDate]"
+                      cachedDataType="dbDate"
+                      cachedName="insertDate"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[insertDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Projektowanie_Lazienki]"
+                      cachedDataType="i4"
+                      cachedName="Projektowanie_Lazienki"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Projektowanie_Lazienki]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie_Lazienki]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Montaz_BM2]"
+                      cachedDataType="i4"
+                      cachedName="Montaz_BM2"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Montaz_BM2]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_BM2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Montaz_BM1]"
+                      cachedDataType="i4"
+                      cachedName="Montaz_BM1"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Montaz_BM1]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_BM1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Montaz_KUCHNIA]"
+                      cachedDataType="i4"
+                      cachedName="Montaz_KUCHNIA"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Montaz_KUCHNIA]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_KUCHNIA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LM_ID]"
+                      cachedDataType="guid"
+                      cachedName="LM_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LM_ID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LM_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[zam_cc]"
+                      cachedDataType="i4"
+                      cachedName="zam_cc"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClickAndCollect]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[zam_cc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="guid"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dzien]"
+                      codePage="1250"
+                      dataType="str"
+                      length="10"
+                      name="dzien" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[godzina]"
+                      dataType="i4"
+                      name="godzina" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[program]"
+                      codePage="1250"
+                      dataType="str"
+                      length="3"
+                      name="program" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nr_sklepu]"
+                      dataType="i4"
+                      name="nr_sklepu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[e_mail]"
+                      dataType="wstr"
+                      length="320"
+                      name="e_mail" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot]"
+                      dataType="cy"
+                      name="obrot" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_01]"
+                      dataType="cy"
+                      name="obrot_dzial_01" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_02]"
+                      dataType="cy"
+                      name="obrot_dzial_02" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_03]"
+                      dataType="cy"
+                      name="obrot_dzial_03" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_04]"
+                      dataType="cy"
+                      name="obrot_dzial_04" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_05]"
+                      dataType="cy"
+                      name="obrot_dzial_05" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_06]"
+                      dataType="cy"
+                      name="obrot_dzial_06" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_07]"
+                      dataType="cy"
+                      name="obrot_dzial_07" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_08]"
+                      dataType="cy"
+                      name="obrot_dzial_08" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_09]"
+                      dataType="cy"
+                      name="obrot_dzial_09" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_10]"
+                      dataType="cy"
+                      name="obrot_dzial_10" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_11]"
+                      dataType="cy"
+                      name="obrot_dzial_11" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_12]"
+                      dataType="cy"
+                      name="obrot_dzial_12" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[obrot_dzial_13]"
+                      dataType="cy"
+                      name="obrot_dzial_13" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Formatyzernia]"
+                      dataType="bool"
+                      name="Formatyzernia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Szycie_obszycie]"
+                      dataType="bool"
+                      name="Szycie_obszycie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Butik]"
+                      dataType="bool"
+                      name="Butik" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Projektowanie]"
+                      dataType="bool"
+                      name="Projektowanie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Projektowanie_KUCHNI]"
+                      dataType="bool"
+                      name="Projektowanie_KUCHNI" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Projektowanie_Lazienki]"
+                      dataType="bool"
+                      name="Projektowanie_Lazienki" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Montaz_BM2]"
+                      dataType="bool"
+                      name="Montaz_BM2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Montaz_BM1]"
+                      dataType="bool"
+                      name="Montaz_BM1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Montaz_KUCHNIA]"
+                      dataType="bool"
+                      name="Montaz_KUCHNIA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Klima]"
+                      dataType="bool"
+                      name="Klima" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inne]"
+                      dataType="bool"
+                      name="Inne" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Obszywanie]"
+                      dataType="bool"
+                      name="Obszywanie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LM_ID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      name="LM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClickAndCollect]"
+                      dataType="bool"
+                      name="ClickAndCollect" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIC].[BSK_Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[pdbmssqllm01.DWH.data_collector]"
+                  connectionManagerRefId="Package.ConnectionManagers[pdbmssqllm01.DWH.data_collector]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[dzien]"
+                      cachedDataType="dbDate"
+                      cachedName="dzien"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[dzien]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzien]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[godzina]"
+                      cachedDataType="numeric"
+                      cachedName="godzina"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[godzina]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[godzina]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[program]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="program"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[program]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[program]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[nr_sklepu]"
+                      cachedDataType="numeric"
+                      cachedName="nr_sklepu"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[nr_sklepu]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nr_sklepu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[e_mail]"
+                      cachedDataType="wstr"
+                      cachedLength="480"
+                      cachedName="e_mail"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[e_mail]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[e_mail]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[LM_ID]"
+                      cachedDataType="guid"
+                      cachedName="LM_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LM_ID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LM_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[zam_cc]"
+                      cachedDataType="i4"
+                      cachedName="zam_cc"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[zam_cc]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[zam_cc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LM_ID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      name="LM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[dzien]"
+                      dataType="dbDate"
+                      name="dzien" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[godzina]"
+                      dataType="numeric"
+                      name="godzina"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[program]"
+                      codePage="1250"
+                      dataType="str"
+                      length="3"
+                      name="program" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[nr_sklepu]"
+                      dataType="numeric"
+                      name="nr_sklepu"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[e_mail]"
+                      dataType="wstr"
+                      length="480"
+                      name="e_mail" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[zam_cc]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      name="zam_cc" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select 	newid() as LM_ID, dzien						
+			, godzina					
+			, program					
+			, nr_sklepu					
+			--, konto					
+			, e_mail					
+			, zam_cc					
+			, SUM(obrot) AS obrot					
+			, sum(obrot_dzial_01) as obrot_dzial_01					
+			, sum(obrot_dzial_02) as obrot_dzial_02					
+			, sum(obrot_dzial_03) as obrot_dzial_03					
+			, sum(obrot_dzial_04) as obrot_dzial_04					
+			, sum(obrot_dzial_05) as obrot_dzial_05					
+			, sum(obrot_dzial_06) as obrot_dzial_06					
+			, sum(obrot_dzial_07) as obrot_dzial_07					
+			, sum(obrot_dzial_08) as obrot_dzial_08					
+			, sum(obrot_dzial_09) as obrot_dzial_09					
+			, sum(obrot_dzial_10) as obrot_dzial_10					
+			, sum(obrot_dzial_11) as obrot_dzial_11					
+			, sum(obrot_dzial_12) as obrot_dzial_12					
+			, sum(obrot_dzial_13) as obrot_dzial_13					
+			--, paragon					
+			, sum(Formatyzernia) as Formatyzernia					
+			, sum(Szycie_obszycie) as Szycie_obszycie					
+			, sum(Butik) as Butik					
+			, sum(Projektowanie) as Projektowanie					
+			, sum(Projektowanie_KUCHNI) as Projektowanie_KUCHNI					
+			, sum(Projektowanie_Łazienki) as Projektowanie_Lazienki					
+			, sum(Montaż_BM2) as Montaz_BM2					
+			, sum(Montaż_BM1) as Montaz_BM1					
+			, sum(Montaż_KUCHNIA) as Montaz_KUCHNIA					
+			, sum(Klima) as Klima					
+			, sum(Inne) as Inne					
+			, sum(Obszywanie) as Obszywanie					
+			, cast(getdate() as date) as insertDate					
+			from					
+								
+			(SELECT 					
+			  LIG.DAT_VTE as dzien					
+			, HEU_TIC as godzina					
+			, case when acc_atp_id = 1050 then 'DOM' else 'PRO' end as program					
+			, LIG.NUM_ETT AS nr_sklepu					
+			, acc_id as konto					
+			, adr_email as e_mail					
+			, case when PAI.NR_ZAMOWIENIA is not null then 1 else 0 end as zam_cc					
+			, SUM(MNT_TTCDEVBU) AS obrot					
+			, case when ART.NUM_ART in (49320516, 49320523 ,49994050 ,49316673 ,49317835 ,49316631 ,49317814 ,49316666 ,49317842 ,49316813 ,49317765 ,49316694 ,49316680 ) then 1 else 0 end as Formatyzernia					
+			, case when ART.NUM_ART in (49321405 ,49321412 ,49321664 ,49321265 ,49321314 ,49321216 ,49321335 ,49321293 ,49321370 ,49321363 ,49321286 ,49316015 ,49321391 ,49321356 ,49321132 ,49994047 ,49321181 ,49321384 ,49321650 ) then 1 else 0 end as Szycie_obszycie					
+			, case when ART.NUM_ART in (49316435 ,49316225 ,49316400 ,49316386 ,49316393 ,49316414 ,49316113 ,49316232 ) then 1 else 0 end as Butik					
+			, case when ART.NUM_ART in (49320691 ,49320705 ,49320593 ,49320586 ,49320684 ) then 1 else 0 end as Projektowanie					
+			, case when ART.NUM_ART in (49320663 ,49317240 ) then 1 else 0 end as Projektowanie_KUCHNI					
+			, case when ART.NUM_ART in (49318521 ) then 1 else 0 end as Projektowanie_Łazienki					
+			, case when ART.NUM_ART in (49994082 ,49994081 ,49994080 ,49994067 ,49994068 ,49321636 ,49321755 ,49994062 ,49994060 ,49994084 ,49994083 ,49994079 ,49994078 ,49994077 ,49994074 ,49994073 ,49994061 ,49994065 ,49994066 ,49994058 ,49994064 ,49994063 ,49994059 ,49994069 ,49994070 ,49994072 ,49994071 ,49994099 ) then 1 else 0 end as Montaż_BM2					
+			, case when ART.NUM_ART in (49994055 ,49994049 ) then 1 else 0 end as Montaż_BM1					
+			, case when ART.NUM_ART in (49994007 ,49994032 ,49994016 ,49994017 ,49994018 ,49994019 ,49994020 ,49994021 ,49994022 ,49994025 ,49994023 ,49994024 ,49994011 ,49994009 ,49994012 ,49994010 ,49994026 ,49994042 ,49994029 ,49994030 ,49994028 ,49994098 ,49994027 ,49994006 ,49994031 ,49994036 ,49994045 ,49994034 ,49994008 ,49994037 ,49994035 ,49994033 ,49994038 ,49994043 ,49994040 ,49994039) then 1 else 0 end as Montaż_KUCHNIA					
+			, case when ART.NUM_ART in (49321503 ,49994051 ,49994094 ) then 1 else 0 end as Klima					
+			, case when ART.NUM_ART in (49318955) then 1 else 0 end as Inne					
+			, case when ART.NUM_ART in (49318703, 49314755, 49319354, 49315154, 49319284) then 1 else 0 end as Obszywanie					
+								
+			, sum(case when ART.COD_RAY = 1 then MNT_TTCDEVBU end) as obrot_dzial_01					
+			, sum(case when ART.COD_RAY = 2 then MNT_TTCDEVBU end) as obrot_dzial_02					
+			, sum(case when ART.COD_RAY = 3 then MNT_TTCDEVBU end) as obrot_dzial_03					
+			, sum(case when ART.COD_RAY = 4 then MNT_TTCDEVBU end) as obrot_dzial_04					
+			, sum(case when ART.COD_RAY = 5 then MNT_TTCDEVBU end) as obrot_dzial_05					
+			, sum(case when ART.COD_RAY = 6 then MNT_TTCDEVBU end) as obrot_dzial_06					
+			, sum(case when ART.COD_RAY = 7 then MNT_TTCDEVBU end) as obrot_dzial_07					
+			, sum(case when ART.COD_RAY = 8 then MNT_TTCDEVBU end) as obrot_dzial_08					
+			, sum(case when ART.COD_RAY = 9 then MNT_TTCDEVBU end) as obrot_dzial_09					
+			, sum(case when ART.COD_RAY = 10 then MNT_TTCDEVBU end) as obrot_dzial_10					
+			, sum(case when ART.COD_RAY = 11 then MNT_TTCDEVBU end) as obrot_dzial_11					
+			, sum(case when ART.COD_RAY = 12 then MNT_TTCDEVBU end) as obrot_dzial_12					
+			, sum(case when ART.COD_RAY = 13 then MNT_TTCDEVBU end) as obrot_dzial_13					
+			, cast(LIG.DAT_VTE as VARCHAR(10)) + '_' +  replace(str(cast(LIG.NUM_ETT as VARCHAR(3)),3),' ','0') + '_' + replace(str(cast(LIG.NUM_CAI as VARCHAR(3)),3),' ','0') + '_' + replace(str(cast(LIG.NUM_HOT as VARCHAR(6)),6),' ','0') + '_' + replace(str(cast(LIG.NUM_TIC as VARCHAR(4)),4),' ','0')  as paragon					
+								
+			  FROM   					
+			  					
+		  (Select L.DAT_VTE 						
+		,L.HEU_TIC						
+		,L.NUM_ETT 						
+		,L.NUM_CAI 						
+		,L.NUM_HOT 						
+		,L.NUM_TIC 						
+		,L.NUM_TYPTRN						
+		,L.NUM_ART						
+		,L.MNT_TTCDEVBU						
+		,L.MNT_HT						
+		,L.MNT_MRG						
+		, case when KAR.COD_CARTFID is null then L.COD_CARTFID else KAR.COD_CARTFID end as COD_CARTFID						
+		, L.NUM_CDE						
+								
+		FROM STAGE.DWH_FR.BV_PROD_006_DWHVIEW_V_FAI_VTE_LIGTICCAI_part L						
+		Left join 						
+								
+		(SELECT 						
+		NUM_ETT						
+		,NUM_CDE						
+		,COD_CARTFID						
+		from						
+		(SELECT						
+		ROW_NUMBER() over (PARTITION BY NUM_ETT, NUM_CDE order by DAT_VTE) as ranking 						
+		,DAT_VTE 						
+		,NUM_ETT						
+		,NUM_CDE						
+		,COD_CARTFID						
+		FROM 						
+		(Select distinct DAT_VTE 						
+		,NUM_ETT						
+		,NUM_CDE						
+		,COD_CARTFID						
+		FROM STAGE.DWH_FR.BV_PROD_006_DWHVIEW_V_FAI_VTE_LIGTICCAI_part
+		 where NUM_TYPTRN = 51						
+		and COD_CARTFID is not null	
+and COD_CARTFID in (select CRD_NO  from STAGE.CLM.CLM_PROD_LCT_CardHolders ch
+	left join STAGE.CLM.[CLM_PROD_LCT_Cards] c on ch.CRH_ACC_NO=c.crd_crh_id
+where CRH_EMPLOYEE=0)					
+		) t0) t1						
+		where ranking=1) KAR						
+								
+		on L.NUM_ETT=KAR.NUM_ETT and L.NUM_CDE=KAR.NUM_CDE						
+								
+		  where  (L.DAT_VTE = convert(date, getdate() -1))						
+		          AND L.NUM_TYPTRN in (1,50,52)						
+		          AND L.NUM_ART not in (49001120						
+		,49018914, 49020013, 49020041, 49020055, 49020076, 4902891, 49038913, 49048916						
+		,49058912, 49068915, 49078911, 49088914, 49098910, 49108913, 49118916, 49128912, 49138915						
+		,49310751, 49311752, 49312753, 49316036, 49316281, 49316295, 49316561, 49316603, 49316715, 49316722, 49316736, 49316771, 49316806						
+		,49316925, 49316981, 49316995, 49317023, 49317030, 49317044, 49317051, 49317065, 49317072, 49317086, 49317093, 49317135, 49317163						
+		,49317191, 49317212, 49317233, 49317282, 49317303, 49317415, 49317450, 49317464, 49318073, 49318080, 49318115, 49318255, 49318283						
+		,49318493, 49318535, 49318591, 49318633, 49318675, 49318682, 49318696, 49318710, 49318724, 49318731, 49318745, 49318752, 49318766						
+		,49318773, 49318780, 49318885, 49318906, 49318913, 49319123, 49319263, 49319270, 49319291, 49319305, 49319361, 49319382, 49319403						
+		,49319424, 49319431, 49319445, 49319452, 49319466, 49319473, 49319480, 49319494, 49319515, 49319522, 49320411, 49320425, 49320432						
+		,49320446, 49320453, 49320460, 49320474, 49321475, 49321510, 49321615, 49470001, 49494949, 49494970, 49890540, 49893753, 49990101						
+		,49994000, 49994013, 49994014, 49994015, 49994046, 49994056, 49994057, 49994085, 49994088, 49994090, 49994095, 49994096, 49994097						
+			  )	)				
+				  				
+		LIG						
+								
+			  inner join stage.CLM.cst_identifiers on idn_no = COD_CARTFID					
+			  inner join stage.CLM.cst_accounts on idn_acc_id = acc_id					
+			  inner join stage.CLM.cst_customers on cus_acc_id = acc_id					
+			  inner join stage.CLM.cmt_addresses on cus_adr_id = adr_id					
+			  left join STAGE.CLM.CLM_PROD_LCT_CardHolders ch on stage.CLM.cst_customers.cus_id=ch.CRH_acc_no					
+			  left join stage.DWH_FR.BV_PROD_006_DWHVIEW_V_DIM_REFMTART_ART ART on LIG.NUM_ART = ART.NUM_ART					
+								
+			  left join ( 					
+						SELECT DISTINCT NUM_ETT,NUM_CPT, ( replace(str(cast(NUM_ETT as VARCHAR(3)),3),' ','0') + '_' + replace(str(cast(NUM_CPT as VARCHAR(6)),6),' ','0') ) as NR_ZAMOWIENIA		
+						FROM [STAGE].[DWH_FR].[BV_PROD_006_DWHVIEW_TF006_VTE_PAITICCAI]		
+						WHERE DAT_VTE BETWEEN convert(date, getdate() -31) AND convert(date, getdate() -1)    		
+								  AND NUM_CAI = 40
+			  ) PAI on ( replace(str(cast(PAI.NUM_ETT as VARCHAR(3)),3),' ','0') + '_' + replace(str(cast(PAI.NUM_CPT as VARCHAR(6)),6),' ','0') ) = ( replace(str(cast(LIG.NUM_ETT as VARCHAR(3)),3),' ','0') + '_' + replace(str(cast(LIG.NUM_CDE as VARCHAR(6)),6),' ','0') )					
+								
+			  where adr_email is not null					
+			and ch.CRH_EMPLOYEE=0					
+								
+			 group by 					
+			  LIG.DAT_VTE 					
+			, HEU_TIC 					
+			, case when acc_atp_id = 1050 then 'DOM' else 'PRO' end 					
+			, LIG.NUM_ETT 					
+			, acc_id 					
+			, adr_email 					
+			, case when PAI.NR_ZAMOWIENIA is not null then 1 else 0 end					
+			, case when ART.NUM_ART in (49320516, 49320523 ,49994050 ,49316673 ,49317835 ,49316631 ,49317814 ,49316666 ,49317842 ,49316813 ,49317765 ,49316694 ,49316680 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49321405 ,49321412 ,49321664 ,49321265 ,49321314 ,49321216 ,49321335 ,49321293 ,49321370 ,49321363 ,49321286 ,49316015 ,49321391 ,49321356 ,49321132 ,49994047 ,49321181 ,49321384 ,49321650 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49316435 ,49316225 ,49316400 ,49316386 ,49316393 ,49316414 ,49316113 ,49316232 ) then 1 else 0 end					
+			, case when ART.NUM_ART in (49320691 ,49320705 ,49320593 ,49320586 ,49320684 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49320663 ,49317240 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49318521 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49994082 ,49994081 ,49994080 ,49994067 ,49994068 ,49321636 ,49321755 ,49994062 ,49994060 ,49994084 ,49994083 ,49994079 ,49994078 ,49994077 ,49994074 ,49994073 ,49994061 ,49994065 ,49994066 ,49994058 ,49994064 ,49994063 ,49994059 ,49994069 ,49994070 ,49994072 ,49994071 ,49994099 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49994055 ,49994049 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49994007 ,49994032 ,49994016 ,49994017 ,49994018 ,49994019 ,49994020 ,49994021 ,49994022 ,49994025 ,49994023 ,49994024 ,49994011 ,49994009 ,49994012 ,49994010 ,49994026 ,49994042 ,49994029 ,49994030 ,49994028 ,49994098 ,49994027 ,49994006 ,49994031 ,49994036 ,49994045 ,49994034 ,49994008 ,49994037 ,49994035 ,49994033 ,49994038 ,49994043 ,49994040 ,49994039) then 1 else 0 end					
+			, case when ART.NUM_ART in (49321503 ,49994051 ,49994094 ) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49318955) then 1 else 0 end 					
+			, case when ART.NUM_ART in (49318703, 49314755, 49319354, 49315154, 49319284) then 1 else 0 end 					
+								
+			, cast(LIG.DAT_VTE as VARCHAR(10)) + '_' +  replace(str(cast(LIG.NUM_ETT as VARCHAR(3)),3),' ','0') + '_' + replace(str(cast(LIG.NUM_CAI as VARCHAR(3)),3),' ','0') + '_' + replace(str(cast(LIG.NUM_HOT as VARCHAR(6)),6),' ','0') + '_' + replace(str(cast(LIG.NUM_TIC as VARCHAR(4)),4),' ','0')					
+								
+			) dane					
+								
+			group by dzien					
+			, godzina					
+			, program					
+			, nr_sklepu					
+			--, konto					
+			, e_mail					
+			, zam_cc					
+			--, paragon					
+								
+		;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[pdbmssqllm01.STAGE.data_collector]"
+                  connectionManagerRefId="Package.ConnectionManagers[pdbmssqllm01.STAGE.data_collector]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzien]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dzien]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzien]"
+                      name="dzien"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[godzina]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[godzina]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[godzina]"
+                      name="godzina"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[program]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[program]"
+                      length="3"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[program]"
+                      name="program"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nr_sklepu]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nr_sklepu]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[nr_sklepu]"
+                      name="nr_sklepu"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[e_mail]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[e_mail]"
+                      length="480"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[e_mail]"
+                      name="e_mail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot]"
+                      name="obrot"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_01]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_01]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_01]"
+                      name="obrot_dzial_01"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_02]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_02]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_02]"
+                      name="obrot_dzial_02"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_03]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_03]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_03]"
+                      name="obrot_dzial_03"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_04]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_04]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_04]"
+                      name="obrot_dzial_04"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_05]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_05]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_05]"
+                      name="obrot_dzial_05"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_06]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_06]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_06]"
+                      name="obrot_dzial_06"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_07]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_07]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_07]"
+                      name="obrot_dzial_07"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_08]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_08]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_08]"
+                      name="obrot_dzial_08"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_09]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_09]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_09]"
+                      name="obrot_dzial_09"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_10]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_10]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_10]"
+                      name="obrot_dzial_10"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_11]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_11]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_11]"
+                      name="obrot_dzial_11"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_12]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_12]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_12]"
+                      name="obrot_dzial_12"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_13]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_13]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[obrot_dzial_13]"
+                      name="obrot_dzial_13"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Formatyzernia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Formatyzernia]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Formatyzernia]"
+                      name="Formatyzernia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Szycie_obszycie]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Szycie_obszycie]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Szycie_obszycie]"
+                      name="Szycie_obszycie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Butik]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Butik]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Butik]"
+                      name="Butik"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Projektowanie]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie]"
+                      name="Projektowanie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie_KUCHNI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Projektowanie_KUCHNI]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie_KUCHNI]"
+                      name="Projektowanie_KUCHNI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Klima]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Klima]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Klima]"
+                      name="Klima"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inne]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inne]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inne]"
+                      name="Inne"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Obszywanie]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Obszywanie]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Obszywanie]"
+                      name="Obszywanie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[insertDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[insertDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[insertDate]"
+                      name="insertDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie_Lazienki]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Projektowanie_Lazienki]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Projektowanie_Lazienki]"
+                      name="Projektowanie_Lazienki"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_BM2]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Montaz_BM2]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_BM2]"
+                      name="Montaz_BM2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_BM1]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Montaz_BM1]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_BM1]"
+                      name="Montaz_BM1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_KUCHNIA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Montaz_KUCHNIA]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Montaz_KUCHNIA]"
+                      name="Montaz_KUCHNIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LM_ID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LM_ID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LM_ID]"
+                      name="LM_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[zam_cc]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[zam_cc]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[zam_cc]"
+                      name="zam_cc"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dzien]"
+                      dataType="dbDate"
+                      name="dzien" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[godzina]"
+                      dataType="numeric"
+                      name="godzina"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[program]"
+                      codePage="1250"
+                      dataType="str"
+                      length="3"
+                      name="program" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nr_sklepu]"
+                      dataType="numeric"
+                      name="nr_sklepu"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[e_mail]"
+                      dataType="wstr"
+                      length="480"
+                      name="e_mail" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot]"
+                      dataType="numeric"
+                      name="obrot"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_01]"
+                      dataType="numeric"
+                      name="obrot_dzial_01"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_02]"
+                      dataType="numeric"
+                      name="obrot_dzial_02"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_03]"
+                      dataType="numeric"
+                      name="obrot_dzial_03"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_04]"
+                      dataType="numeric"
+                      name="obrot_dzial_04"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_05]"
+                      dataType="numeric"
+                      name="obrot_dzial_05"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_06]"
+                      dataType="numeric"
+                      name="obrot_dzial_06"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_07]"
+                      dataType="numeric"
+                      name="obrot_dzial_07"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_08]"
+                      dataType="numeric"
+                      name="obrot_dzial_08"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_09]"
+                      dataType="numeric"
+                      name="obrot_dzial_09"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_10]"
+                      dataType="numeric"
+                      name="obrot_dzial_10"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_11]"
+                      dataType="numeric"
+                      name="obrot_dzial_11"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_12]"
+                      dataType="numeric"
+                      name="obrot_dzial_12"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[obrot_dzial_13]"
+                      dataType="numeric"
+                      name="obrot_dzial_13"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Formatyzernia]"
+                      dataType="i4"
+                      name="Formatyzernia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Szycie_obszycie]"
+                      dataType="i4"
+                      name="Szycie_obszycie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Butik]"
+                      dataType="i4"
+                      name="Butik" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Projektowanie]"
+                      dataType="i4"
+                      name="Projektowanie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Projektowanie_KUCHNI]"
+                      dataType="i4"
+                      name="Projektowanie_KUCHNI" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Klima]"
+                      dataType="i4"
+                      name="Klima" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inne]"
+                      dataType="i4"
+                      name="Inne" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Obszywanie]"
+                      dataType="i4"
+                      name="Obszywanie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[insertDate]"
+                      dataType="dbDate"
+                      name="insertDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Projektowanie_Lazienki]"
+                      dataType="i4"
+                      name="Projektowanie_Lazienki" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Montaz_BM2]"
+                      dataType="i4"
+                      name="Montaz_BM2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Montaz_BM1]"
+                      dataType="i4"
+                      name="Montaz_BM1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Montaz_KUCHNIA]"
+                      dataType="i4"
+                      name="Montaz_KUCHNIA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LM_ID]"
+                      dataType="guid"
+                      name="LM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[zam_cc]"
+                      dataType="i4"
+                      name="zam_cc" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LM_ID]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LM_ID]"
+                      name="LM_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dzien]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dzien]"
+                      name="dzien" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[godzina]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[godzina]"
+                      name="godzina"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[program]"
+                      codePage="1250"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[program]"
+                      name="program" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nr_sklepu]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nr_sklepu]"
+                      name="nr_sklepu"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[e_mail]"
+                      dataType="wstr"
+                      length="480"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[e_mail]"
+                      name="e_mail" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[zam_cc]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[zam_cc]"
+                      name="zam_cc" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot]"
+                      name="obrot"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_01]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_01]"
+                      name="obrot_dzial_01"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_02]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_02]"
+                      name="obrot_dzial_02"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_03]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_03]"
+                      name="obrot_dzial_03"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_04]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_04]"
+                      name="obrot_dzial_04"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_05]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_05]"
+                      name="obrot_dzial_05"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_06]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_06]"
+                      name="obrot_dzial_06"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_07]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_07]"
+                      name="obrot_dzial_07"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_08]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_08]"
+                      name="obrot_dzial_08"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_09]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_09]"
+                      name="obrot_dzial_09"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_10]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_10]"
+                      name="obrot_dzial_10"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_11]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_11]"
+                      name="obrot_dzial_11"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_12]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_12]"
+                      name="obrot_dzial_12"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_13]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[obrot_dzial_13]"
+                      name="obrot_dzial_13"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Formatyzernia]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Formatyzernia]"
+                      name="Formatyzernia" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Szycie_obszycie]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Szycie_obszycie]"
+                      name="Szycie_obszycie" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Butik]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Butik]"
+                      name="Butik" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Projektowanie]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Projektowanie]"
+                      name="Projektowanie" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Projektowanie_KUCHNI]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Projektowanie_KUCHNI]"
+                      name="Projektowanie_KUCHNI" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Projektowanie_Lazienki]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Projektowanie_Lazienki]"
+                      name="Projektowanie_Lazienki" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Montaz_BM2]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Montaz_BM2]"
+                      name="Montaz_BM2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Montaz_BM1]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Montaz_BM1]"
+                      name="Montaz_BM1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Montaz_KUCHNIA]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Montaz_KUCHNIA]"
+                      name="Montaz_KUCHNIA" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Klima]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Klima]"
+                      name="Klima" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inne]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inne]"
+                      name="Inne" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Obszywanie]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Obszywanie]"
+                      name="Obszywanie" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[insertDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[insertDate]"
+                      name="insertDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Multicast Output 1]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Multicast Output 2]"
+              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 2"
+              startId="Package\Data Flow Task\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="140,80" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\OLE DB Destination 1"
+          TopLeft="665.5,319.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="385,57" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Data Flow Task\Multicast"
+          TopLeft="373,178" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="367,360" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="460,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-27,79"
+              Start="0,0"
+              End="-27,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="-4,39.5" />
+                  <mssgle:LineSegment
+                    End="-23,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23,39.5"
+                    Point2="-27,39.5"
+                    Point3="-27,43.5" />
+                  <mssgle:LineSegment
+                    End="-27,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Multicast Output 2]"
+          TopLeft="451.666666666667,220">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="303.833333333333,99.5"
+              Start="0,0"
+              End="303.833333333333,92">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5855263157895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5855263157895"
+                    Point2="0,40.5855263157895"
+                    Point3="4,40.5855263157895" />
+                  <mssgle:LineSegment
+                    End="299.833333333333,40.5855263157895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="299.833333333333,40.5855263157895"
+                    Point2="303.833333333333,40.5855263157895"
+                    Point3="303.833333333333,44.5855263157895" />
+                  <mssgle:LineSegment
+                    End="303.833333333333,92" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Multicast Output 1]"
+          TopLeft="433,220">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.5,140"
+              Start="0,0"
+              End="19.5,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66"
+                    Point2="0,70"
+                    Point3="4,70" />
+                  <mssgle:LineSegment
+                    End="15.5,70" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,70"
+                    Point2="19.5,70"
+                    Point3="19.5,74" />
+                  <mssgle:LineSegment
+                    End="19.5,132.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
