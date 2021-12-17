@@ -56,7 +56,7 @@ steps:
         done
       fi 
 # [END tf-plan]
- 
+
 # [START tf-apply]
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.0.0'
@@ -64,7 +64,7 @@ steps:
   args: 
   - '-c'
   - | 
-      if ["$BRANCH_NAME" == "DEV" ]; then
+      if [ -d "$BRANCH_NAME" == "dev" ]; then
         cd environments/$BRANCH_NAME      
         terraform apply -auto-approve
       else
