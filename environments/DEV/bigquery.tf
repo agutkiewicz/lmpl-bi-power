@@ -4,3 +4,4 @@ resource "google_bigquery_dataset" "datamartCBLmpl" {
   description   = "CB"
   location      = "EU"
 }
+ 
